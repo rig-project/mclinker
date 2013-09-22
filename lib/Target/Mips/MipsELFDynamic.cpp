@@ -17,6 +17,26 @@
 
 using namespace mcld;
 
+
+// MIPS mandatory dynamic section entries
+enum {
+  DT_MIPS_RLD_VERSION  = 0x70000001,
+  DT_MIPS_FLAGS        = 0x70000005,
+  DT_MIPS_BASE_ADDRESS = 0x70000006,
+  DT_MIPS_LOCAL_GOTNO  = 0x7000000a,
+  DT_MIPS_SYMTABNO     = 0x70000011,
+  DT_MIPS_GOTSYM       = 0x70000013,
+  DT_MIPS_PLTGOT       = 0x70000032,
+};
+
+// Dynamic section MIPS flags
+enum {
+  RHF_NONE                   = 0x00000000,  // None
+  RHF_QUICKSTART             = 0x00000001,  // Use shortcut pointers
+  RHF_NOTPOT                 = 0x00000002,  // Hash size not power of two
+  RHF_NO_LIBRARY_REPLACEMENT = 0x00000004   // Ignore LD_LIBRARY_PATH
+};
+
 MipsELFDynamic::MipsELFDynamic(const MipsGNULDBackend& pParent,
                                const LinkerConfig& pConfig)
   : ELFDynamic(pParent, pConfig),
@@ -30,15 +50,15 @@ void MipsELFDynamic::reserveTargetEntries(const ELFFileFormat& pFormat)
   if (pFormat.hasGOT())
     reserveOne(llvm::ELF::DT_PLTGOT);
 
-  reserveOne(llvm::ELF::DT_MIPS_RLD_VERSION);
-  reserveOne(llvm::ELF::DT_MIPS_FLAGS);
-  reserveOne(llvm::ELF::DT_MIPS_BASE_ADDRESS);
-  reserveOne(llvm::ELF::DT_MIPS_LOCAL_GOTNO);
-  reserveOne(llvm::ELF::DT_MIPS_SYMTABNO);
-  reserveOne(llvm::ELF::DT_MIPS_GOTSYM);
+  reserveOne(DT_MIPS_RLD_VERSION);
+  reserveOne(DT_MIPS_FLAGS);
+  reserveOne(DT_MIPS_BASE_ADDRESS);
+  reserveOne(DT_MIPS_LOCAL_GOTNO);
+  reserveOne(DT_MIPS_SYMTABNO);
+  reserveOne(DT_MIPS_GOTSYM);
 
   if (pFormat.hasGOTPLT())
-    reserveOne(llvm::ELF::DT_MIPS_PLTGOT);
+    reserveOne(DT_MIPS_PLTGOT);
 }
 
 void MipsELFDynamic::applyTargetEntries(const ELFFileFormat& pFormat)
@@ -46,15 +66,15 @@ void MipsELFDynamic::applyTargetEntries(const ELFFileFormat& pFormat)
   if (pFormat.hasGOT())
     applyOne(llvm::ELF::DT_PLTGOT, pFormat.getGOT().addr());
 
-  applyOne(llvm::ELF::DT_MIPS_RLD_VERSION, 1);
-  applyOne(llvm::ELF::DT_MIPS_FLAGS, llvm::ELF::RHF_NOTPOT);
-  applyOne(llvm::ELF::DT_MIPS_BASE_ADDRESS, getBaseAddress());
-  applyOne(llvm::ELF::DT_MIPS_LOCAL_GOTNO, getLocalGotNum(pFormat));
-  applyOne(llvm::ELF::DT_MIPS_SYMTABNO, getSymTabNum(pFormat));
-  applyOne(llvm::ELF::DT_MIPS_GOTSYM, getGotSym(pFormat));
+  applyOne(DT_MIPS_RLD_VERSION, 1);
+  applyOne(DT_MIPS_FLAGS, RHF_NOTPOT);
+  applyOne(DT_MIPS_BASE_ADDRESS, getBaseAddress());
+  applyOne(DT_MIPS_LOCAL_GOTNO, getLocalGotNum(pFormat));
+  applyOne(DT_MIPS_SYMTABNO, getSymTabNum(pFormat));
+  applyOne(DT_MIPS_GOTSYM, getGotSym(pFormat));
 
   if (pFormat.hasGOTPLT())
-    applyOne(llvm::ELF::DT_MIPS_PLTGOT, pFormat.getGOTPLT().addr());
+    applyOne(DT_MIPS_PLTGOT, pFormat.getGOTPLT().addr());
 }
 
 size_t MipsELFDynamic::getSymTabNum(const ELFFileFormat& pFormat) const

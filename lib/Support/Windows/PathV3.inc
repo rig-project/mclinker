@@ -7,6 +7,7 @@
 //
 //===----------------------------------------------------------------------===//
 #include <mcld/Support/Path.h>
+#include <llvm/Support/ErrorHandling.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <stack>

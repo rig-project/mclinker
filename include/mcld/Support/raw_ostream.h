@@ -13,6 +13,7 @@
 #endif
 #include <string>
 #include <llvm/Support/raw_ostream.h>
+#include <llvm/Support/FileSystem.h>
 
 namespace mcld {
 
@@ -31,7 +32,7 @@ public:
   /// output errors).
   raw_fd_ostream(const char *pFilename,
                  std::string &pErrorInfo,
-                 llvm::sys::fs::OpenFlags pFlags = llvm::sys::fs::F_None);
+                 unsigned pFlags = 0);
 
   /// raw_fd_ostream ctor - FD is the file descriptor that this writes to.  If
   /// ShouldClose is true, this closes the file when the stream is destroyed.
