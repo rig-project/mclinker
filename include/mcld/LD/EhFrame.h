@@ -12,7 +12,7 @@
 #include <gtest.h>
 #endif
 
-#include <mcld/Config/Config.h>
+#include <mcld/Config/Defines.h>
 #include <mcld/Fragment/RegionFragment.h>
 #include <mcld/Fragment/NullFragment.h>
 #include <mcld/Support/Allocators.h>

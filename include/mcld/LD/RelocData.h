@@ -12,7 +12,7 @@
 #include <gtest.h>
 #endif
 
-#include <mcld/Config/Config.h>
+#include <mcld/Config/Defines.h>
 #include <mcld/Fragment/Relocation.h>
 #include <mcld/Support/Allocators.h>
 #include <mcld/Support/GCFactoryListTraits.h>

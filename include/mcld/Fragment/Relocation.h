@@ -11,7 +11,7 @@
 #ifdef ENABLE_UNITTEST
 #include <gtest.h>
 #endif
-#include <mcld/Config/Config.h>
+#include <mcld/Config/Defines.h>
 #include <mcld/Fragment/FragmentRef.h>
 #include <mcld/Support/GCFactoryListTraits.h>
 

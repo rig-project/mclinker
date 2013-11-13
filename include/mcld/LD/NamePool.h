@@ -12,7 +12,7 @@
 #include <gtest.h>
 #endif
 
-#include <mcld/Config/Config.h>
+#include <mcld/Config/Defines.h>
 #include <mcld/ADT/HashTable.h>
 #include <mcld/ADT/StringHash.h>
 #include <mcld/ADT/Uncopyable.h>

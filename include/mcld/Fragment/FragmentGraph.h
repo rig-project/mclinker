@@ -16,7 +16,7 @@
 
 #include <mcld/ADT/HashTable.h>
 #include <mcld/ADT/HashEntry.h>
-#include <mcld/Config/Config.h>
+#include <mcld/Config/Defines.h>
 #include <mcld/Fragment/FGNode.h>
 #include <mcld/Fragment/FGEdge.h>
 #include <mcld/Support/GCFactory.h>

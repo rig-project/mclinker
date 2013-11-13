@@ -12,7 +12,7 @@
 #include <gtest.h>
 #endif
 
-#include <mcld/Config/Config.h>
+#include <mcld/Config/Defines.h>
 #include <mcld/ADT/SizeTraits.h>
 #include <mcld/ADT/TypeTraits.h>
 #include <mcld/Support/Allocators.h>

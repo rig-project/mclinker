@@ -116,31 +116,6 @@ CHECK_ALONE_TARGET
 # Config.h
 AC_CONFIG_HEADER(include/mcld/Config/Config.h)
 
-AH_TOP([
-//===- Config.h.in --------------------------------------------------------===//
-//
-//                     The MCLinker Project
-//
-// This file is distributed under the University of Illinois Open Source
-// License. See LICENSE.TXT for details.
-//
-//===----------------------------------------------------------------------===//
-#ifndef MCLD_CONFIG_H
-#define MCLD_CONFIG_H
-])
-
-AH_BOTTOM([
-#define MCLD_REGION_CHUNK_SIZE 32
-#define MCLD_NUM_OF_INPUTS 32
-#define MCLD_SECTIONS_PER_INPUT 16
-#define MCLD_SYMBOLS_PER_INPUT 128
-#define MCLD_RELOCATIONS_PER_INPUT 1024
-
-#define MCLD_SEGMENTS_PER_OUTPUT 8
-
-#endif
-])
-
 ####################
 # OUTPUT
 AC_CONFIG_FILES([VERSION])

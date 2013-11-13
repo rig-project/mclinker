@@ -14,7 +14,7 @@
 
 #include <mcld/Script/StrToken.h>
 #include <mcld/Support/Allocators.h>
-#include <mcld/Config/Config.h>
+#include <mcld/Config/Defines.h>
 
 namespace mcld
 {

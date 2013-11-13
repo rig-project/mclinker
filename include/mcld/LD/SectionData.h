@@ -16,7 +16,7 @@
 #include <llvm/ADT/ilist_node.h>
 #include <llvm/Support/DataTypes.h>
 
-#include <mcld/Config/Config.h>
+#include <mcld/Config/Defines.h>
 #include <mcld/Support/Allocators.h>
 #include <mcld/Fragment/Fragment.h>
 

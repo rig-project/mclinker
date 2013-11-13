@@ -15,7 +15,7 @@
 #include <mcld/Script/ExprToken.h>
 #include <mcld/Object/SectionMap.h>
 #include <mcld/Support/Allocators.h>
-#include <mcld/Config/Config.h>
+#include <mcld/Config/Defines.h>
 #include <llvm/Support/DataTypes.h>
 #include <string>
 #include <cassert>

@@ -13,7 +13,7 @@
 #endif
 
 #include <llvm/Support/DataTypes.h>
-#include <mcld/Config/Config.h>
+#include <mcld/Config/Defines.h>
 #include <string>
 
 namespace mcld {

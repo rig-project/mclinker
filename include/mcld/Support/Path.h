@@ -17,7 +17,7 @@
 #endif
 
 #include <llvm/Support/raw_ostream.h>
-#include <mcld/Config/Config.h>
+#include <mcld/Config/Defines.h>
 
 #include <iosfwd>
 #include <functional>

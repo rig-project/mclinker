@@ -8,6 +8,7 @@
 //===----------------------------------------------------------------------===//
 #include <lite/PreferenceOptions.h>
 #include <mcld/LinkerConfig.h>
+#include <mcld/Config/Config.h>
 #include <mcld/Support/CommandLine.h>
 #include <mcld/Support/raw_ostream.h>
 #include <llvm/Support/Process.h>

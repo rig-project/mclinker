@@ -11,7 +11,7 @@
 #ifdef ENABLE_UNITTEST
 #include <gtest.h>
 #endif
-#include <mcld/Config/Config.h>
+#include <mcld/Config/Defines.h>
 #include <mcld/Support/GCFactory.h>
 #include <mcld/Support/MemoryRegion.h>
 

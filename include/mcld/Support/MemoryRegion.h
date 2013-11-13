@@ -12,7 +12,7 @@
 #include <gtest.h>
 #endif
 
-#include <mcld/Config/Config.h>
+#include <mcld/Config/Defines.h>
 #include <mcld/ADT/Uncopyable.h>
 #include <mcld/Support/Allocators.h>
 #include <mcld/Support/Space.h>

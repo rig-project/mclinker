@@ -15,7 +15,7 @@
 
 #include <llvm/Support/DataTypes.h>
 #include <mcld/Support/Allocators.h>
-#include <mcld/Config/Config.h>
+#include <mcld/Config/Defines.h>
 #include <mcld/LD/LDFileFormat.h>
 #include <string>
 

@@ -42,6 +42,9 @@ HEADER = ${INCDIR}/AttributeOption.h \
 	${INCDIR}/ADT/Uncopyable.h \
 	${INCDIR}/CodeGen/MCLinker.h \
 	${INCDIR}/CodeGen/TargetMachine.h \
+	${INCDIR}/Config/Defines.h \
+	${INCDIR}/Config/Linkers.def \
+	${INCDIR}/Config/Targets.def \
 	${INCDIR}/Fragment/AlignFragment.h \
 	${INCDIR}/Fragment/FGEdge.h \
 	${INCDIR}/Fragment/FGNode.h \
