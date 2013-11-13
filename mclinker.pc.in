@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@@abs_top_builddir@/include
+requires=
+
+Name: MCLinker
+Description: LLVM Linker for Mobile Computing
+Version: @PKG_CONFIG_VERSION@
+Libs: -L${libdir} -lmcld
+Cflags: -I${includedir}
+Requires: ${requires}
